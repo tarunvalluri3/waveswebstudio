@@ -1,0 +1,110 @@
+/* ============================= */
+/* TAILWIND */
+/* ============================= */
+@import "tailwindcss";
+
+/* ============================= */
+/* THEME (Fonts) */
+/* ============================= */
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+}
+
+/* ============================= */
+/* BASE STYLES */
+/* ============================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    @apply text-gray-900 bg-white;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    @apply text-gray-900;
+  }
+
+  p {
+    @apply text-gray-600;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+/* ============================= */
+/* UTILITIES */
+/* ============================= */
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
+
+/* Wave Background */
+.wave-layer {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  left: -50%;
+  top: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), transparent 60%),
+    radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.05), transparent 70%);
+  animation: waveMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(5%) translateY(2%);
+  }
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 12s linear infinite;
+}  
+
+/* index.css */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
