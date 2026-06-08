@@ -9,7 +9,13 @@ import {
   Plug,
 } from "lucide-react";
 import { FiLayers, FiCalendar } from "react-icons/fi";
+
 import { useNavigate } from "react-router-dom";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const data = [
   {
@@ -56,12 +62,70 @@ const data = [
 
 export default function Capabilities() {
   const navigate = useNavigate();
+
+  const sectionRef = useRef(null);
+  const leftRef = useRef(null);
+  const capabilityRefs = useRef([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Left Content
+      gsap.fromTo(
+        leftRef.current,
+        {
+          opacity: 0,
+          y: 80,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: leftRef.current,
+            start: "top 90%",
+            end: "top 30%",
+            scrub: 2,
+          },
+        },
+      );
+
+      // Capabilities
+      capabilityRefs.current.forEach((item) => {
+        if (!item) return;
+
+        gsap.fromTo(
+          item,
+          {
+            opacity: 0.3,
+            y: 40,
+          },
+          {
+            opacity: 1,
+            y: 0,
+
+            scrollTrigger: {
+              trigger: item,
+              start: "top 85%",
+              end: "top 55%",
+              scrub: 1.5,
+            },
+          },
+        );
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="bg-[#F6F6F4] px-6 py-[90px] md:px-10 md:py-[110px] lg:px-16">
+    <section
+      ref={sectionRef}
+      className="bg-[#F6F6F4] px-6 py-[90px] md:px-10 md:py-[110px] lg:px-16"
+    >
       <div className="mx-auto max-w-[1280px]">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
           {/* LEFT */}
-          <div className="lg:col-span-5">
+          <div ref={leftRef} className="lg:col-span-5 opacity-0">
             <p className="text-[11px] uppercase tracking-[0.28em] text-red-600">
               Capabilities
             </p>
@@ -132,10 +196,12 @@ export default function Capabilities() {
                 return (
                   <div
                     key={index}
+                    ref={(el) => (capabilityRefs.current[index] = el)}
                     className="
-               
-                py-6
-                "
+    py-6
+    opacity-30
+    translate-y-[40px]
+  "
                   >
                     <div className="grid grid-cols-[30px_1fr] gap-5">
                       {/* ICON */}

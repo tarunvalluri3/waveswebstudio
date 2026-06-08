@@ -12,13 +12,63 @@ import {
 
 import { Link } from "react-router-dom";
 import { homePageContent } from "../../data/homePageContent";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"; 
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HomeServices = () => {
   const { servicesSection } = homePageContent;
   const services = servicesSection.services;
 
   const sectionRef = useRef(null);
+  const headerRef = useRef(null);
+  const servicesRef = useRef(null);
+
+ useEffect(() => {
+  const ctx = gsap.context(() => {
+    gsap.fromTo(
+      headerRef.current,
+      {
+        opacity: 0,
+        y: 60,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 90%",
+          end: "top 30%",
+          scrub: 2,
+        },
+      },
+    );
+
+    gsap.fromTo(
+      servicesRef.current,
+      {
+        opacity: 0,
+        y: 60,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 85%",
+          end: "top 30%",
+          scrub: 2,
+        },
+      },
+    );
+  });
+
+  return () => ctx.revert();
+}, []);
 
   return (
     <section
@@ -41,7 +91,7 @@ const HomeServices = () => {
     >
       <div className="max-w-[1440px] mx-auto">
         {/* HEADER */}
-        <div className="max-w-[650px] heading-reveal reveal-text">
+        <div ref={headerRef} className="max-w-[650px] opacity-0">
           <h2
             className="
           font-playfair
@@ -83,7 +133,12 @@ const HomeServices = () => {
           </p>
         </div>
 
-        {/* SERVICES */}
+        {/* SERVICES */} 
+
+        <div
+  ref={servicesRef}
+  className="opacity-0"
+>
 
         <ServiceRight item={services[0]} Icon={Monitor} />
         <ServiceRight item={services[1]} Icon={Layout} />
@@ -100,6 +155,7 @@ const HomeServices = () => {
         <div className="mt-14 grid md:grid-cols-2 gap-12">
           <ServiceLeft item={services[8]} Icon={Smartphone} noMargin />
           <ServiceLeft item={services[7]} Icon={TrendingUp} noMargin />
+        </div> 
         </div>
       </div>
     </section>

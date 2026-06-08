@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FiDollarSign , FiCompass,   FiPhone,  } from "react-icons/fi";
+import { FiDollarSign, FiCompass, FiPhone } from "react-icons/fi";
 
 const features = [
   {
@@ -123,39 +123,22 @@ export default function Features() {
         </div>
 
         {/* CLOSING */}
-        
 
+        <div className="mt-10 flex justify-end">
+          <div className="max-w-[460px] text-right">
+            <p className="text-[14px] leading-[1.8] text-[#EAEAEA]">
+              Most projects fail in the gaps. Unclear direction, slow execution,
+              and decisions without intent.
+            </p>
 
+            <p className="mt-2 text-[14px] leading-[1.8] text-[#EAEAEA]">
+              We remove those gaps, so what you build actually works.
+            </p>
 
-<div className="mt-10 flex justify-end">
+            {/* CTA GROUP */}
 
-  <div className="max-w-[460px] text-right">
-
-    <p className="text-[14px] leading-[1.8] text-[#EAEAEA]">
-
-      Most projects fail in the gaps. Unclear direction, slow execution,
-
-      and decisions without intent.
-
-    </p>
-
-
-
-    <p className="mt-2 text-[14px] leading-[1.8] text-[#EAEAEA]">
-
-      We remove those gaps, so what you build actually works.
-
-    </p>
-
-
-
-    {/* CTA GROUP */}
-
-
-
-    <div
-
-      className="
+            <div
+              className="
 
       mt-10
 
@@ -176,14 +159,10 @@ export default function Features() {
       sm:gap-8
 
       "
-
-    >
-
-      <button
-
-        onClick={() => navigate("/book-call")}
-
-        className="
+            >
+              <button
+                onClick={() => navigate("/book-call")}
+                className="
 
         flex
 
@@ -208,22 +187,15 @@ export default function Features() {
         hover:border-white
 
         "
+              >
+                <FiPhone className="text-[15px] shrink-0" />
 
-      >
+                <span>Book a Strategy Call</span>
+              </button>
 
-        <FiPhone className="text-[15px] shrink-0" />
-
-        <span>Book a Strategy Call</span>
-
-      </button>
-
-
-
-      <button
-
-        onClick={() => navigate("/services")}
-
-        className="
+              <button
+                onClick={() => navigate("/services")}
+                className="
 
         flex
 
@@ -248,22 +220,15 @@ export default function Features() {
         hover:border-white
 
         "
+              >
+                <FiCompass className="text-[15px] shrink-0" />
 
-      >
+                <span>Explore Solutions</span>
+              </button>
 
-        <FiCompass className="text-[15px] shrink-0" />
-
-        <span>Explore Solutions</span>
-
-      </button>
-
-
-
-      <button
-
-        onClick={() => navigate("/pricing")}
-
-        className="
+              <button
+                onClick={() => navigate("/pricing")}
+                className="
 
         flex
 
@@ -288,20 +253,14 @@ export default function Features() {
         hover:border-white
 
         "
+              >
+                <FiDollarSign className="text-[15px] shrink-0" />
 
-      >
-
-        <FiDollarSign className="text-[15px] shrink-0" />
-
-        <span>Review Prices</span>
-
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
+                <span>Review Prices</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

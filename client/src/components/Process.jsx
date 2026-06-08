@@ -1,11 +1,75 @@
-import { useRef } from "react";
 import { homePageContent } from "../data/homePageContent";
 import { useNavigate } from "react-router-dom";
 import { FiTrendingUp } from "react-icons/fi";
 
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Process = () => {
   const { processSection } = homePageContent;
   const sectionRef = useRef(null);
+  const headerRef = useRef(null);
+  const timelineRef = useRef(null);
+  const stepsRef = useRef([]);
+
+ useEffect(() => {
+  const ctx = gsap.context(() => {
+    // Header Reveal
+    gsap.fromTo(
+      headerRef.current,
+      {
+        opacity: 0,
+        y: 80,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 90%",
+          end: "top 30%",
+          scrub: 2,
+        },
+      },
+    );
+
+    // Timeline Growth
+    gsap.to(timelineRef.current, {
+      scaleY: 1,
+      ease: "none",
+
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 85%",
+        end: "bottom 20%",
+        scrub: 2,
+      },
+    });
+
+    // Step Activation
+    stepsRef.current.forEach((step) => {
+      if (!step) return;
+
+      gsap.to(step, {
+        opacity: 1,
+
+        scrollTrigger: {
+          trigger: step,
+          start: "top 65%",
+          end: "top 40%",
+          scrub: 1.5,
+        },
+      });
+    });
+  });
+
+  return () => ctx.revert();
+}, []);
+
   const navigate = useNavigate();
 
   return (
@@ -30,7 +94,10 @@ const Process = () => {
 
       <div className="relative max-w-6xl mx-auto">
         {/* HEADER */}
-        <div className="text-center max-w-2xl mx-auto">
+        <div
+          ref={headerRef}
+          className="text-center max-w-2xl mx-auto opacity-0"
+        >
           <h2
             className="
           font-playfair
@@ -59,7 +126,38 @@ const Process = () => {
         {/* TIMELINE */}
         <div className="mt-20 relative">
           {/* CENTER LINE */}
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[1px] h-full bg-white/[0.04]" />
+          <div
+            className="
+  absolute
+  top-0
+
+  left-[14px]
+  md:left-1/2
+
+  md:-translate-x-1/2
+
+  w-[1px]
+  h-full
+  bg-white/[0.04]
+  "
+          >
+            <div
+              ref={timelineRef}
+              className="
+absolute
+top-0
+left-0
+w-full
+h-full
+bg-gradient-to-b
+from-red-600
+via-red-700
+to-red-900
+origin-top
+scale-y-0
+"
+            />
+          </div>
 
           <div className="space-y-20">
             {processSection.steps.map((step, index) => {
@@ -68,13 +166,22 @@ const Process = () => {
               return (
                 <div
                   key={index}
-                  className="relative grid md:grid-cols-2 items-start"
+                  ref={(el) => (stepsRef.current[index] = el)}
+                  className="
+  relative
+  grid
+  md:grid-cols-2
+  items-start
+  opacity-40
+  "
                 >
                   {/* LEFT SIDE */}
                   <div
-                    className={`px-6 ${
-                      isLeft ? "text-right pr-16" : "invisible"
-                    }`}
+                    className={`
+pl-10
+md:px-6
+${isLeft ? "md:text-right md:pr-16" : "invisible md:block"}
+`}
                   >
                     {isLeft && (
                       <>
@@ -139,7 +246,13 @@ const Process = () => {
                   </div>
 
                   {/* RIGHT SIDE */}
-                  <div className={`px-6 ${!isLeft ? "pl-16" : "invisible"}`}>
+                  <div
+                    className={`
+pl-10
+md:px-6
+${!isLeft ? "md:pl-16" : "invisible md:block"}
+`}
+                  >
                     {!isLeft && (
                       <>
                         {/* NUMBER */}
@@ -205,15 +318,21 @@ const Process = () => {
                   {/* CENTER DOT */}
                   <div
                     className="
-                  absolute
-                  left-1/2
-                  -translate-x-1/2
-                  top-3
-                  w-[6px]
-                  h-[6px]
-                  bg-[#374151]/70
-                  rounded-full
-                  "
+  absolute
+
+  left-[14px]
+  md:left-1/2
+
+  -translate-x-1/2
+
+  top-3
+
+  w-[6px]
+  h-[6px]
+
+  bg-[#374151]/70
+  rounded-full
+  "
                   />
                 </div>
               );
@@ -260,7 +379,8 @@ const Process = () => {
   duration-300
   "
             >
-              <FiTrendingUp className="text-[16px]" /><span></span>
+              <FiTrendingUp className="text-[16px]" />
+              <span></span>
               Start Your Digital Transformation
             </button>
           </div>
