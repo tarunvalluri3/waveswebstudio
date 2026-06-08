@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import BookCallForm from "./BookCallForm";
+import SEO from "./SEO";
 
 const callBenefits = [
   {
@@ -67,27 +68,33 @@ const BookCall = () => {
     setActive(active === index ? null : index);
   };
   return (
-    <main className="bg-[#fafafa] text-[#111111]">
-      {/* HERO */}
+    <>
+      <SEO
+        title="Book a Consultation | Waves Web Studio"
+        description="Schedule a consultation to discuss your website, web application, SEO, or digital transformation project."
+        keywords="book consultation, website consultation, web development meeting"
+      />
+      <main className="bg-[#fafafa] text-[#111111]">
+        {/* HERO */}
 
-      <section>
-        <div className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-16 py-24 lg:py-36">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
-            <div className="lg:col-span-7">
-              <span
-                className="
+        <section>
+          <div className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-16 py-24 lg:py-36">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+              <div className="lg:col-span-7">
+                <span
+                  className="
     text-[10px]
     sm:text-[11px]
     uppercase
     tracking-[0.28em]
     text-red-600
     "
-              >
-                Strategy Consultation
-              </span>
+                >
+                  Strategy Consultation
+                </span>
 
-              <h1
-                className="
+                <h1
+                  className="
     mt-5
     max-w-[780px]
     font-heading
@@ -99,12 +106,12 @@ const BookCall = () => {
     tracking-[-0.03em]
     font-semibold
   "
-              >
-                Let's discuss what's next for your business.
-              </h1>
+                >
+                  Let's discuss what's next for your business.
+                </h1>
 
-              <p
-                className="
+                <p
+                  className="
     mt-8
     max-w-[620px]
     text-[15px]
@@ -112,127 +119,127 @@ const BookCall = () => {
     leading-8
     text-neutral-600
     "
-              >
-                This conversation is designed to understand your business,
-                current challenges, growth objectives, and digital requirements.
-                Together, we'll explore the most effective approach for
-                achieving your goals and determine whether we're the right fit
-                to work together.
-              </p>
+                >
+                  This conversation is designed to understand your business,
+                  current challenges, growth objectives, and digital
+                  requirements. Together, we'll explore the most effective
+                  approach for achieving your goals and determine whether we're
+                  the right fit to work together.
+                </p>
 
-              <div
-                className="
+                <div
+                  className="
     mt-12
     pt-8
     border-t
     border-black/10
     "
-              >
-                <div className="flex flex-wrap gap-x-12 gap-y-6">
-                  <div>
-                    <p
-                      className="
+                >
+                  <div className="flex flex-wrap gap-x-12 gap-y-6">
+                    <div>
+                      <p
+                        className="
           text-[10px]
           uppercase
           tracking-[0.18em]
           text-neutral-500
           "
-                    >
-                      Response Time
-                    </p>
+                      >
+                        Response Time
+                      </p>
 
-                    <p
-                      className="
+                      <p
+                        className="
           mt-2
           text-[16px]
           font-medium
           text-black
           "
-                    >
-                      Within 24 Hours
-                    </p>
-                  </div>
+                      >
+                        Within 24 Hours
+                      </p>
+                    </div>
 
-                  <div>
-                    <p
-                      className="
+                    <div>
+                      <p
+                        className="
           text-[10px]
           uppercase
           tracking-[0.18em]
           text-neutral-500
           "
-                    >
-                      Consultation
-                    </p>
+                      >
+                        Consultation
+                      </p>
 
-                    <p
-                      className="
+                      <p
+                        className="
           mt-2
           text-[16px]
           font-medium
           text-black
           "
-                    >
-                      Free Initial Call
-                    </p>
-                  </div>
+                      >
+                        Free Initial Call
+                      </p>
+                    </div>
 
-                  <div>
-                    <p
-                      className="
+                    <div>
+                      <p
+                        className="
           text-[10px]
           uppercase
           tracking-[0.18em]
           text-neutral-500
           "
-                    >
-                      Focus
-                    </p>
+                      >
+                        Focus
+                      </p>
 
-                    <p
-                      className="
+                      <p
+                        className="
           mt-2
           text-[16px]
           font-medium
           text-black
           "
-                    >
-                      Strategy & Planning
-                    </p>
+                      >
+                        Strategy & Planning
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="lg:col-span-5">
-              <BookCallForm />
+              <div className="lg:col-span-5">
+                <BookCallForm />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* BENEFITS */}
+        {/* BENEFITS */}
 
-      <section className="bg-[#111111] text-white">
-        <div className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-16 py-24 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-            {/* LEFT */}
+        <section className="bg-[#111111] text-white">
+          <div className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-16 py-24 lg:py-32">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+              {/* LEFT */}
 
-            <div className="lg:col-span-5">
-              <span
-                className="
+              <div className="lg:col-span-5">
+                <span
+                  className="
           text-[10px]
           sm:text-[11px]
           uppercase
           tracking-[0.28em]
           text-red-600
           "
-              >
-                What Happens Next
-              </span>
+                >
+                  What Happens Next
+                </span>
 
-              <h2
-                className="
+                <h2
+                  className="
           mt-5
           font-heading
           text-[34px]
@@ -243,12 +250,12 @@ const BookCall = () => {
           font-semibold
           text-white
           "
-              >
-                A strategic conversation designed around your business.
-              </h2>
+                >
+                  A strategic conversation designed around your business.
+                </h2>
 
-              <p
-                className="
+                <p
+                  className="
           mt-8
           max-w-[460px]
           text-[15px]
@@ -256,64 +263,34 @@ const BookCall = () => {
           leading-8
           text-neutral-400
           "
-              >
-                Every project begins with understanding your goals, challenges,
-                and opportunities. This process helps us determine the right
-                direction before any proposal, planning, or execution begins.
-              </p>
-            </div>
-
-            {/* RIGHT */}
-
-            <div className="lg:col-span-7">
-              {/* DISCOVERY */}
-
-              <div className="py-8 border-t border-white/[0.08]">
-                <h3
-                  className="
-            text-[26px]
-            sm:text-[30px]
-            tracking-[-0.03em]
-            font-medium
-            text-red-600
-            "
                 >
-                  Discovery
-                </h3>
-
-                <p
-                  className="
-            mt-5
-            max-w-[560px]
-            text-[15px]
-            sm:text-[16px]
-            leading-8
-            text-neutral-400
-            "
-                >
-                  We discuss your business, current challenges, growth
-                  objectives, audience, and the outcomes you're looking to
-                  achieve through your digital presence.
+                  Every project begins with understanding your goals,
+                  challenges, and opportunities. This process helps us determine
+                  the right direction before any proposal, planning, or
+                  execution begins.
                 </p>
               </div>
 
-              {/* STRATEGY */}
+              {/* RIGHT */}
 
-              <div className="py-8 border-t border-white/[0.08]">
-                <h3
-                  className="
+              <div className="lg:col-span-7">
+                {/* DISCOVERY */}
+
+                <div className="py-8 border-t border-white/[0.08]">
+                  <h3
+                    className="
             text-[26px]
             sm:text-[30px]
             tracking-[-0.03em]
             font-medium
             text-red-600
             "
-                >
-                  Strategy
-                </h3>
+                  >
+                    Discovery
+                  </h3>
 
-                <p
-                  className="
+                  <p
+                    className="
             mt-5
             max-w-[560px]
             text-[15px]
@@ -321,30 +298,30 @@ const BookCall = () => {
             leading-8
             text-neutral-400
             "
-                >
-                  Based on your requirements, we identify opportunities,
-                  recommend solutions, and outline the most effective approach
-                  for achieving your business goals.
-                </p>
-              </div>
+                  >
+                    We discuss your business, current challenges, growth
+                    objectives, audience, and the outcomes you're looking to
+                    achieve through your digital presence.
+                  </p>
+                </div>
 
-              {/* ROADMAP */}
+                {/* STRATEGY */}
 
-              <div className="py-8 border-t border-b border-white/[0.08]">
-                <h3
-                  className="
+                <div className="py-8 border-t border-white/[0.08]">
+                  <h3
+                    className="
             text-[26px]
             sm:text-[30px]
             tracking-[-0.03em]
             font-medium
             text-red-600
             "
-                >
-                  Roadmap & Proposal
-                </h3>
+                  >
+                    Strategy
+                  </h3>
 
-                <p
-                  className="
+                  <p
+                    className="
             mt-5
             max-w-[560px]
             text-[15px]
@@ -352,130 +329,161 @@ const BookCall = () => {
             leading-8
             text-neutral-400
             "
-                >
-                  If we're the right fit, you'll receive a clear roadmap
-                  covering scope, timeline, investment, deliverables, and the
-                  recommended next steps.
-                </p>
+                  >
+                    Based on your requirements, we identify opportunities,
+                    recommend solutions, and outline the most effective approach
+                    for achieving your business goals.
+                  </p>
+                </div>
+
+                {/* ROADMAP */}
+
+                <div className="py-8 border-t border-b border-white/[0.08]">
+                  <h3
+                    className="
+            text-[26px]
+            sm:text-[30px]
+            tracking-[-0.03em]
+            font-medium
+            text-red-600
+            "
+                  >
+                    Roadmap & Proposal
+                  </h3>
+
+                  <p
+                    className="
+            mt-5
+            max-w-[560px]
+            text-[15px]
+            sm:text-[16px]
+            leading-8
+            text-neutral-400
+            "
+                  >
+                    If we're the right fit, you'll receive a clear roadmap
+                    covering scope, timeline, investment, deliverables, and the
+                    recommended next steps.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* WHO ITS FOR */}
+        {/* WHO ITS FOR */}
 
-      <section className="bg-[#111111] border-t border-white/[0.08]">
-        <div className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-16 py-24">
-          <div className="grid lg:grid-cols-2 gap-24">
-            <div>
-              <span
-                className="
+        <section className="bg-[#111111] border-t border-white/[0.08]">
+          <div className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-16 py-24">
+            <div className="grid lg:grid-cols-2 gap-24">
+              <div>
+                <span
+                  className="
           text-[11px]
           uppercase
           tracking-[0.24em]
           text-red-600
           "
-              >
-                Ideal Clients
-              </span>
+                >
+                  Ideal Clients
+                </span>
 
-              <h2
-                className="
+                <h2
+                  className="
           mt-5
           text-[42px]
           font-semibold
           tracking-[-0.03em]
           text-white
           "
-              >
-                Who This Is For
-              </h2>
+                >
+                  Who This Is For
+                </h2>
 
-              <div className="mt-10 space-y-5">
-                {suitableFor.map((item) => (
-                  <div
-                    key={item}
-                    className="
+                <div className="mt-10 space-y-5">
+                  {suitableFor.map((item) => (
+                    <div
+                      key={item}
+                      className="
               flex
               gap-4
               items-start
               "
-                  >
-                    <span className="text-red-600 mt-[2px]">+</span>
+                    >
+                      <span className="text-red-600 mt-[2px]">+</span>
 
-                    <p className="text-neutral-400">{item}</p>
-                  </div>
-                ))}
+                      <p className="text-neutral-400">{item}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <div>
-              <span
-                className="
+              <div>
+                <span
+                  className="
           text-[11px]
           uppercase
           tracking-[0.24em]
           text-red-600
           "
-              >
-                Expectations
-              </span>
+                >
+                  Expectations
+                </span>
 
-              <h2
-                className="
+                <h2
+                  className="
           mt-5
           text-[42px]
           font-semibold
           tracking-[-0.03em]
           text-white
           "
-              >
-                Not Suitable For
-              </h2>
+                >
+                  Not Suitable For
+                </h2>
 
-              <div className="mt-10 space-y-5">
-                {notSuitableFor.map((item) => (
-                  <div
-                    key={item}
-                    className="
+                <div className="mt-10 space-y-5">
+                  {notSuitableFor.map((item) => (
+                    <div
+                      key={item}
+                      className="
               flex
               gap-4
               items-start
               "
-                  >
-                    <span className="text-red-600 mt-[2px]">—</span>
+                    >
+                      <span className="text-red-600 mt-[2px]">—</span>
 
-                    <p className="text-neutral-400">{item}</p>
-                  </div>
-                ))}
+                      <p className="text-neutral-400">{item}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* PROCESS */}
+        {/* PROCESS */}
 
-      <section className="bg-[#F8F7F4]">
-        <div className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-16 py-24 lg:py-32">
-          {/* HEADER */}
+        <section className="bg-[#F8F7F4]">
+          <div className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-16 py-24 lg:py-32">
+            {/* HEADER */}
 
-          <div className="max-w-[760px]">
-            <span
-              className="
+            <div className="max-w-[760px]">
+              <span
+                className="
         text-[10px]
         sm:text-[11px]
         uppercase
         tracking-[0.28em]
         text-red-600
         "
-            >
-              Outcomes
-            </span>
+              >
+                Outcomes
+              </span>
 
-            <h2
-              className="
+              <h2
+                className="
         mt-5
         font-heading
         text-[34px]
@@ -485,12 +493,12 @@ const BookCall = () => {
         tracking-[-0.05em]
         font-semibold
         "
-            >
-              What you'll leave the consultation with.
-            </h2>
+              >
+                What you'll leave the consultation with.
+              </h2>
 
-            <p
-              className="
+              <p
+                className="
         mt-8
         max-w-[620px]
         text-[15px]
@@ -498,42 +506,42 @@ const BookCall = () => {
         leading-8
         text-neutral-600
         "
-            >
-              Every strategy call is designed to provide clarity, actionable
-              direction, and a better understanding of what your business needs
-              next.
-            </p>
-          </div>
+              >
+                Every strategy call is designed to provide clarity, actionable
+                direction, and a better understanding of what your business
+                needs next.
+              </p>
+            </div>
 
-          {/* ITEMS */}
+            {/* ITEMS */}
 
-          <div className="mt-20">
-            {callBenefits.map((item) => (
-              <div
-                key={item.title}
-                className="
+            <div className="mt-20">
+              {callBenefits.map((item) => (
+                <div
+                  key={item.title}
+                  className="
           py-12
           border-t
           border-black/10
           "
-              >
-                <div className="grid lg:grid-cols-12 gap-8 lg:gap-16">
-                  {/* LEFT */}
+                >
+                  <div className="grid lg:grid-cols-12 gap-8 lg:gap-16">
+                    {/* LEFT */}
 
-                  <div className="lg:col-span-4">
-                    <span
-                      className="
+                    <div className="lg:col-span-4">
+                      <span
+                        className="
                 text-[12px]
                 tracking-[0.24em]
                 uppercase
                 text-red-600
                 "
-                    >
-                      {item.number}
-                    </span>
+                      >
+                        {item.number}
+                      </span>
 
-                    <h3
-                      className="
+                      <h3
+                        className="
                 mt-4
                 text-[30px]
                 sm:text-[36px]
@@ -541,54 +549,54 @@ const BookCall = () => {
                 tracking-[-0.04em]
                 font-medium
                 "
-                    >
-                      {item.title}
-                    </h3>
-                  </div>
+                      >
+                        {item.title}
+                      </h3>
+                    </div>
 
-                  {/* RIGHT */}
+                    {/* RIGHT */}
 
-                  <div className="lg:col-span-8 lg:pt-2">
-                    <p
-                      className="
+                    <div className="lg:col-span-8 lg:pt-2">
+                      <p
+                        className="
                 max-w-[620px]
                 text-[16px]
                 leading-8
                 text-neutral-600
                 "
-                    >
-                      {item.description}
-                    </p>
+                      >
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ */}
+        {/* FAQ */}
 
-      <section className="bg-[#F8F7F4] border-t border-black/10">
-        <div className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-16 py-24 lg:py-32">
-          <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
-            {/* LEFT */}
+        <section className="bg-[#F8F7F4] border-t border-black/10">
+          <div className="max-w-[1320px] mx-auto px-6 sm:px-8 lg:px-16 py-24 lg:py-32">
+            <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
+              {/* LEFT */}
 
-            <div className="lg:col-span-4">
-              <span
-                className="
+              <div className="lg:col-span-4">
+                <span
+                  className="
           text-[10px]
           sm:text-[11px]
           uppercase
           tracking-[0.28em]
           text-red-600
           "
-              >
-                Questions
-              </span>
+                >
+                  Questions
+                </span>
 
-              <h2
-                className="
+                <h2
+                  className="
           mt-5
           font-heading
           text-[34px]
@@ -598,52 +606,52 @@ const BookCall = () => {
           tracking-[-0.05em]
           font-semibold
           "
-              >
-                Frequently Asked Questions
-              </h2>
+                >
+                  Frequently Asked Questions
+                </h2>
 
-              <p
-                className="
+                <p
+                  className="
           mt-6
           max-w-[340px]
           text-[15px]
           leading-8
           text-neutral-600
           "
-              >
-                Everything you need to know before scheduling a consultation,
-                discussing your project, or starting an engagement.
-              </p>
-            </div>
+                >
+                  Everything you need to know before scheduling a consultation,
+                  discussing your project, or starting an engagement.
+                </p>
+              </div>
 
-            {/* RIGHT */}
+              {/* RIGHT */}
 
-            <div className="lg:col-span-8">
-              <div className="space-y-8">
-                {faq.map((item, index) => {
-                  const isOpen = active === index;
+              <div className="lg:col-span-8">
+                <div className="space-y-8">
+                  {faq.map((item, index) => {
+                    const isOpen = active === index;
 
-                  return (
-                    <div
-                      key={item.question}
-                      className="
+                    return (
+                      <div
+                        key={item.question}
+                        className="
                 border-b
                 border-black/10
                 pb-8
                 "
-                    >
-                      <button
-                        onClick={() => toggle(index)}
-                        className="
+                      >
+                        <button
+                          onClick={() => toggle(index)}
+                          className="
                   w-full
                   flex
                   justify-between
                   items-start
                   text-left
                   "
-                      >
-                        <span
-                          className="
+                        >
+                          <span
+                            className="
                     text-[18px]
                     sm:text-[20px]
                     font-medium
@@ -651,50 +659,51 @@ const BookCall = () => {
                     text-black
                     pr-8
                     "
-                        >
-                          {item.question}
-                        </span>
+                          >
+                            {item.question}
+                          </span>
 
-                        <span
-                          className="
+                          <span
+                            className="
                     text-red-600
                     text-[22px]
                     leading-none
                     "
-                        >
-                          {isOpen ? "−" : "+"}
-                        </span>
-                      </button>
+                          >
+                            {isOpen ? "−" : "+"}
+                          </span>
+                        </button>
 
-                      <div
-                        className={`
+                        <div
+                          className={`
                     overflow-hidden
                     transition-all
                     duration-500
                     ease-[cubic-bezier(0.22,1,0.36,1)]
                     ${isOpen ? "max-h-[300px] mt-5" : "max-h-0"}
                   `}
-                      >
-                        <p
-                          className="
+                        >
+                          <p
+                            className="
                     max-w-[85%]
                     text-[15px]
                     leading-8
                     text-neutral-600
                     "
-                        >
-                          {item.answer}
-                        </p>
+                          >
+                            {item.answer}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 };
 

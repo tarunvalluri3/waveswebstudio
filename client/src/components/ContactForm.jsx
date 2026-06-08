@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
+const subjects = [
+  "Website Build",
+  "Migration",
+  "SEO",
+  "Web Applications",
+  "App Development",
+  "E-commerce",
+  "Other",
+];
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -8,16 +18,6 @@ const ContactForm = () => {
     subject: "",
     message: "",
   });
-
-  const subjects = [
-    "Website Build",
-    "Migration",
-    "SEO",
-    "Web Applications",
-    "App Development",
-    "E-commerce",
-    "Other",
-  ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -89,10 +89,11 @@ const ContactForm = () => {
         <form
           action="https://formspree.io/f/meewqnqj"
           method="POST"
+          aria-label="Project inquiry form"
           className="
-      mt-10
-      space-y-9
-      "
+    mt-10
+    space-y-9
+  "
         >
           <input
             type="hidden"
@@ -102,27 +103,41 @@ const ContactForm = () => {
 
           <input type="hidden" name="source" value="Contact Page" />
 
-          <input type="text" name="_gotcha" className="hidden" />
+          <input
+            type="text"
+            name="_gotcha"
+            tabIndex="-1"
+            autoComplete="off"
+            aria-hidden="true"
+            className="hidden"
+          />
           {/* NAME + EMAIL */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
             {/* NAME */}
             <div>
               <label
+                htmlFor="name"
                 className="
-          block
-          mb-4
-          text-[11px]
-          tracking-[0.12em]
-          uppercase
-          text-[#6B6B73]
-          "
+    block
+    mb-4
+    text-[11px]
+    tracking-[0.12em]
+    uppercase
+    text-[#6B6B73]
+  "
               >
                 Name
               </label>
 
               <input
+                id="name"
                 type="text"
                 name="name"
+                required
+                autoComplete="name"
+                minLength={2}
+                maxLength={80}
+                aria-required="true"
                 placeholder="Full name"
                 value={formData.name}
                 onChange={handleChange}
@@ -162,8 +177,13 @@ const ContactForm = () => {
               </label>
 
               <input
+                id="email"
                 type="email"
                 name="email"
+                required
+                autoComplete="email"
+                spellCheck={false}
+                aria-required="true"
                 placeholder="Email address"
                 value={formData.email}
                 onChange={handleChange}
@@ -205,10 +225,13 @@ const ContactForm = () => {
 
             <div className="relative">
               <select
-  name="subject"
-  value={formData.subject}
-  onChange={handleChange}
-  className="
+                id="subject"
+                name="subject"
+                required
+                aria-required="true"
+                value={formData.subject}
+                onChange={handleChange}
+                className="
     w-full
     h-[50px]
     appearance-none
@@ -225,21 +248,21 @@ const ContactForm = () => {
     transition-all
     duration-300
   "
->
-  <option value="" className="bg-[#111111] text-[#F5F5F3]">
-    Select service
-  </option>
+              >
+                <option value="" className="bg-[#111111] text-[#F5F5F3]">
+                  Select service
+                </option>
 
-  {subjects.map(item => (
-    <option
-      key={item}
-      value={item}
-      className="bg-[#111111] text-[#F5F5F3]"
-    >
-      {item}
-    </option>
-  ))}
-</select>
+                {subjects.map((item) => (
+                  <option
+                    key={item}
+                    value={item}
+                    className="bg-[#111111] text-[#F5F5F3]"
+                  >
+                    {item}
+                  </option>
+                ))}
+              </select>
 
               <div
                 className="

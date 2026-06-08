@@ -9,7 +9,6 @@ const nav = [
   { name: "Contact", path: "/contact" },
 ];
 
-// 👇 ONLY CHANGE HERE
 const Navbar = ({ logoRef }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -26,6 +25,7 @@ const Navbar = ({ logoRef }) => {
     );
 
     const el = linksRef.current[activeIndex];
+
     if (!el || !underlineRef.current) return;
 
     gsap.to(underlineRef.current, {
@@ -38,6 +38,7 @@ const Navbar = ({ logoRef }) => {
 
   const handleHover = (index) => {
     const el = linksRef.current[index];
+
     if (!el) return;
 
     gsap.to(underlineRef.current, {
@@ -52,7 +53,9 @@ const Navbar = ({ logoRef }) => {
     const activeIndex = nav.findIndex(
       (item) => item.path === location.pathname,
     );
+
     const el = linksRef.current[activeIndex];
+
     if (!el) return;
 
     gsap.to(underlineRef.current, {
@@ -86,6 +89,32 @@ const Navbar = ({ logoRef }) => {
     }
   }, [openMenu]);
 
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") {
+        setOpenMenu(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (openMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [openMenu]);
+
   const handleMobileNavigate = (path) => {
     const tl = gsap.timeline({
       onComplete: () => {
@@ -114,18 +143,19 @@ const Navbar = ({ logoRef }) => {
 
   return (
     <nav className="absolute top-0 left-0 w-full z-50 text-black pt-0.5">
-      <div className="max-w-7xl mx-auto flex justify-between p-4 items-center">
-        {/* 🔥 ONLY CHANGE HERE */}
+      <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
         <NavLink
           to="/"
           ref={logoRef}
-          className="font-semibold text-[22px] tracking-[-0.02em]"
+          className="font-semibold text-[22px] tracking-[-0.02em] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 rounded-sm"
         >
           Wav<span className="text-red-600">e</span>s.
         </NavLink>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex relative" onMouseLeave={handleLeave}>
+        <div
+          className="hidden lg:flex relative"
+          onMouseLeave={handleLeave}
+        >
           <ul className="flex gap-8 relative">
             {nav.map((item, index) => (
               <li
@@ -137,7 +167,7 @@ const Navbar = ({ logoRef }) => {
                 <NavLink
                   to={item.path}
                   end={item.path === "/"}
-                  className="text-[15px] font-medium"
+                  className="text-[15px] font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 rounded-sm"
                 >
                   {item.name}
                 </NavLink>
@@ -152,39 +182,54 @@ const Navbar = ({ logoRef }) => {
           />
         </div>
 
-        {/* CTA */}
         <div className="hidden lg:flex">
           <Link
             to="/book-call"
             className="
-      text-black
-      text-[15px]
-      font-medium
-      border-b
-      border-red-600
-      pb-1
-      w-fit
-      hover:border-black/40
-      transition-all
-      duration-300
-    "
+              text-black
+              text-[15px]
+              font-medium
+              border-b
+              border-red-600
+              pb-1
+              w-fit
+              hover:border-black/40
+              transition-all
+              duration-300
+              focus:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-red-600
+              focus-visible:ring-offset-2
+              rounded-sm
+            "
           >
             Schedule a Call →
           </Link>
         </div>
 
-        {/* Mobile */}
         <div className="lg:hidden">
-          <button onClick={() => setOpenMenu(true)}>Menu</button>
+          <button
+            onClick={() => setOpenMenu(true)}
+            aria-label="Open navigation menu"
+            aria-expanded={openMenu}
+            aria-controls="mobile-menu"
+            className="focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 rounded-sm"
+          >
+            Menu
+          </button>
 
           {openMenu && (
             <div
+              id="mobile-menu"
               ref={menuRef}
+              role="dialog"
+              aria-modal="true"
               className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center text-white"
             >
               <button
                 onClick={() => setOpenMenu(false)}
-                className="absolute top-4 right-4 text-xl"
+                aria-label="Close navigation menu"
+                className="absolute top-4 right-4 text-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
               >
                 ✕
               </button>
@@ -194,7 +239,7 @@ const Navbar = ({ logoRef }) => {
                   <li key={item.path}>
                     <button
                       onClick={() => handleMobileNavigate(item.path)}
-                      className={`relative tracking-tight transition-all duration-300 ${
+                      className={`relative tracking-tight transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm ${
                         location.pathname === item.path
                           ? "text-white after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:w-6 after:h-[2px] after:bg-red-600"
                           : "text-white"
