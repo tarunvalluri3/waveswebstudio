@@ -283,7 +283,7 @@ export default function Contact() {
                   {
                     icon: FiMail,
                     title: "Email",
-                    value: "contact@wavesstudio.in",
+                    value: "waveswebstudio99@gmail.com",
                     color: "text-[#DC2626]", // red
                   },
 
@@ -301,19 +301,19 @@ export default function Contact() {
                     color: "text-[#F59E0B]", // amber
                   },
 
-                  {
-                    icon: FaInstagram,
-                    title: "Instagram",
-                    value: "@waveswebstudio",
-                    color: "text-[#E1306C]", // instagram pink
-                  },
+                  // {
+                  //   icon: FaInstagram,
+                  //   title: "Instagram",
+                  //   value: "@waveswebstudio",
+                  //   color: "text-[#E1306C]", // instagram pink
+                  // },
 
-                  {
-                    icon: FaLinkedinIn,
-                    title: "LinkedIn",
-                    value: "Waves Web Studio",
-                    color: "text-[#0A66C2]", // linkedin blue
-                  },
+                  // {
+                  //   icon: FaLinkedinIn,
+                  //   title: "LinkedIn",
+                  //   value: "Waves Web Studio",
+                  //   color: "text-[#0A66C2]", // linkedin blue
+                  // },
                 ].map((item, index) => {
                   const Icon = item.icon;
 

@@ -41,7 +41,7 @@ export const serviceLinks = servicesData.map(
 // ---------------------
 
 export const contactInfo = {
-  email: "contact@waveswebstudio.com",
+  email: "waveswebstudio99@gmail.com",
 
   phone: "+91 6303896249",
 
