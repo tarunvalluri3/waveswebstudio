@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 
-import {
-  Mail,
-  MapPin,
-  ArrowUpRight,
-} from "lucide-react";
+import { Mail, MapPin, ArrowUpRight } from "lucide-react";
 
 import {
   FaWhatsapp,
@@ -122,11 +118,8 @@ const Footer = () => {
               "
             >
               Wav
-              <span className="text-red-600">
-                e
-              </span>
+              <span className="text-red-600">e</span>
               s.
-
               <span
                 className="
                 ml-3
@@ -156,7 +149,6 @@ const Footer = () => {
               "
             >
               Digital experiences
-
               <span
                 className="
                 block
@@ -176,9 +168,8 @@ const Footer = () => {
               text-white/42
               "
             >
-              Premium websites and digital systems
-              designed for brands that value
-              distinction, clarity and long-term growth.
+              Premium websites and digital systems designed for brands that
+              value distinction, clarity and long-term growth.
             </p>
 
             {/* CTA */}
@@ -207,8 +198,7 @@ const Footer = () => {
               "
             >
               Start Your Project
-
-              <ArrowUpRight size={18}/>
+              <ArrowUpRight size={18} />
             </Link>
           </div>
 
@@ -226,7 +216,6 @@ const Footer = () => {
             {/* Pages */}
 
             <div>
-
               <p
                 className="
                 text-[10px]
@@ -239,8 +228,7 @@ const Footer = () => {
               </p>
 
               <div className="mt-8 space-y-5">
-
-                {footerNavLinks.map(item=>(
+                {footerNavLinks.map((item) => (
                   <Link
                     key={item.name}
                     to={item.path}
@@ -260,16 +248,12 @@ const Footer = () => {
                     {item.name}
                   </Link>
                 ))}
-
               </div>
-
             </div>
-
 
             {/* Services */}
 
             <div>
-
               <p
                 className="
                 text-[10px]
@@ -282,8 +266,7 @@ const Footer = () => {
               </p>
 
               <div className="mt-8 space-y-5">
-
-                {serviceLinks.map(service=>(
+                {serviceLinks.map((service) => (
                   <Link
                     key={service.name}
                     to={service.path}
@@ -303,16 +286,12 @@ const Footer = () => {
                     {service.name}
                   </Link>
                 ))}
-
               </div>
-
             </div>
-
 
             {/* Contact */}
 
             <div>
-
               <p
                 className="
                 text-[10px]
@@ -325,7 +304,6 @@ const Footer = () => {
               </p>
 
               <div className="mt-8 space-y-7">
-
                 <a
                   href={`mailto:${contactInfo.email}`}
                   className="
@@ -347,7 +325,6 @@ const Footer = () => {
                   {contactInfo.email}
                 </a>
 
-
                 <a
                   href={`https://wa.me/${contactInfo.phone}`}
                   className="
@@ -368,7 +345,6 @@ const Footer = () => {
                   {contactInfo.phone}
                 </a>
 
-
                 <div
                   className="
                   flex
@@ -386,11 +362,8 @@ const Footer = () => {
 
                   {contactInfo.location}
                 </div>
-
               </div>
-
             </div>
-
           </div>
         </div>
 
@@ -413,7 +386,6 @@ const Footer = () => {
           {/* Social */}
 
           <div>
-
             <p
               className="
               mb-6
@@ -427,9 +399,7 @@ const Footer = () => {
             </p>
 
             <div className="flex gap-8">
-
-              {socialLinks.map(item=>(
-
+              {socialLinks.map((item) => (
                 <a
                   key={item.name}
                   href={item.path}
@@ -465,19 +435,118 @@ const Footer = () => {
                   >
                     {item.name}
                   </span>
-
                 </a>
-
               ))}
-
             </div>
-
           </div>
 
           {/* Closing */}
 
-          <div className="lg:text-right">
+          
 
+          <div
+            className="
+  flex
+  flex-wrap
+  gap-x-6
+  gap-y-3
+
+  justify-start
+  lg:justify-end
+
+  mt-10
+  pt-8
+
+  border-t
+  border-white/[0.06]
+  "
+          >
+            <Link
+              to="/legal/privacy-policy"
+              className="
+    text-[12px]
+    uppercase
+    tracking-[0.14em]
+    text-white/18
+
+    hover:text-white/70
+
+    transition-colors
+    duration-500
+    "
+            >
+              Privacy Policy
+            </Link>
+
+            <Link
+              to="/legal/terms-and-conditions"
+              className="
+    text-[12px]
+    uppercase
+    tracking-[0.14em]
+    text-white/18
+
+    hover:text-white/70
+
+    transition-colors
+    duration-500
+    "
+            >
+              Terms & Conditions
+            </Link>
+
+            <Link
+              to="/legal/refund-policy"
+              className="
+    text-[12px]
+    uppercase
+    tracking-[0.14em]
+    text-white/18
+
+    hover:text-white/70
+
+    transition-colors
+    duration-500
+    "
+            >
+              Refund Policy
+            </Link>
+
+            <Link
+              to="/legal/cancellation-policy"
+              className="
+    text-[12px]
+    uppercase
+    tracking-[0.14em]
+    text-white/18
+
+    hover:text-white/70
+
+    transition-colors
+    duration-500
+    "
+            >
+              Cancellation Policy
+            </Link>
+
+            <Link
+              to="/legal/cookie-policy"
+              className="
+    text-[12px]
+    uppercase
+    tracking-[0.14em]
+    text-white/18
+
+    hover:text-white/70
+
+    transition-colors
+    duration-500
+    "
+            >
+              Cookie Policy
+            </Link>
+          </div> 
+          <div className="lg:text-right">
             <p
               className="
               text-[13px]
@@ -489,18 +558,11 @@ const Footer = () => {
               Designed to elevate perception.
             </p>
 
-            <p className="mt-5 text-sm text-white/22">
-              {footerMeta.copyright}
-            </p>
+            <p className="mt-5 text-sm text-white/22">{footerMeta.copyright}</p>
 
-            <p className="mt-2 text-sm text-white/15">
-              {footerMeta.tagline}
-            </p>
-
+            <p className="mt-2 text-sm text-white/15">{footerMeta.tagline}</p>
           </div>
-
         </div>
-
       </div>
     </footer>
   );
