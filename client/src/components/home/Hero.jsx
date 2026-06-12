@@ -47,7 +47,7 @@ const Hero = () => {
                   className="flex items-center gap-2 text-black text-[15px] font-medium border-b border-red-600 pb-1 w-fit hover:border-black/40 transition-all duration-300"
                 >
                   <FiPhone className="text-[16px]" />
-                  {homePageContent.heroSection.cta.primary} 
+                  {homePageContent.heroSection.cta.primary}
                 </button>
 
                 <button
@@ -55,7 +55,7 @@ const Hero = () => {
                   className="flex items-center gap-2 text-black/70 text-[15px] font-medium border-b border-black/20 pb-1 w-fit hover:border-red-600 hover:text-black transition-all duration-300"
                 >
                   <FiLayers className="text-[16px]" />
-                  Explore Solutions 
+                  Explore Solutions
                 </button>
               </div>
             </div>
@@ -66,8 +66,7 @@ const Hero = () => {
             ref={formRef}
             className="lg:col-span-6 flex justify-center lg:justify-end"
           >
-            <ContactForm /> 
-            <p>Hello</p>
+            <ContactForm />
           </div>
         </div>
       </div>
