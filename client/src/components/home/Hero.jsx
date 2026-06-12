@@ -66,7 +66,8 @@ const Hero = () => {
             ref={formRef}
             className="lg:col-span-6 flex justify-center lg:justify-end"
           >
-            <ContactForm />
+            <ContactForm /> 
+            <p>Hello</p>
           </div>
         </div>
       </div>
