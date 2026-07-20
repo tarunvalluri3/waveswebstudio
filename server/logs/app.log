@@ -162,3 +162,14 @@ Please retry in 49.713299406s. [{"@type":"type.googleapis.com/google.rpc.Help","
 [2026-07-20T09:00:55.559Z] INFO : Server is running on http://localhost:3000
 [2026-07-20T09:01:19.718Z] INFO : Server is running on http://localhost:3000
 [2026-07-20T09:01:29.759Z] INFO : Server is running on http://localhost:3000
+[2026-07-20T09:51:44.945Z] INFO : Server is running on http://localhost:3000
+[2026-07-20T09:52:09.158Z] ERROR : Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [401 Unauthorized] Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.ai.generativelanguage.v1beta.GenerativeService.GenerateContent","service":"generativelanguage.googleapis.com"}}]
+    at handleResponseNotOk (file:///C:/Users/Tarun%20Valluri/Desktop/MY%20PROJECTS/WavesWebStudio/server/node_modules/@google/generative-ai/dist/index.mjs:432:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (file:///C:/Users/Tarun%20Valluri/Desktop/MY%20PROJECTS/WavesWebStudio/server/node_modules/@google/generative-ai/dist/index.mjs:401:9)
+    at async generateContent (file:///C:/Users/Tarun%20Valluri/Desktop/MY%20PROJECTS/WavesWebStudio/server/node_modules/@google/generative-ai/dist/index.mjs:865:22)
+    at async file:///C:/Users/Tarun%20Valluri/Desktop/MY%20PROJECTS/WavesWebStudio/server/node_modules/@langchain/google-genai/dist/chat_models.js:617:12
+    at async pRetry (file:///C:/Users/Tarun%20Valluri/Desktop/MY%20PROJECTS/WavesWebStudio/server/node_modules/@langchain/core/dist/utils/p-retry/index.js:124:19)
+    at async run (C:\Users\Tarun Valluri\Desktop\MY PROJECTS\WavesWebStudio\server\node_modules\p-queue\dist\index.js:163:29)
+[2026-07-20T09:52:31.699Z] INFO : Server is running on http://localhost:3000
+[2026-07-20T09:58:09.405Z] INFO : Server is running on http://localhost:3000

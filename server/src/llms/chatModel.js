@@ -5,7 +5,7 @@ import { chatResponseSchema } from "../schema/chatResponseSchema.js";
 
 const model = new ChatGoogleGenerativeAI({
   // model: "gemini-3.5-flash",
-  model: "gemini-2.5-flash",
+  model: "gemini-3.5-flash",
   apiKey: GOOGLE_API_KEY,
   temperature: 0.2,
 });
